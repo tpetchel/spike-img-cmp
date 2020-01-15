@@ -10,7 +10,7 @@ namespace spike_img_cmp
     {
         static void Main(string[] args)
         {
-            var path = @"/Users/thpetche/Dev/tpetchel/learn-pr";
+            var path = args[0];
             var imageFiles = new List<string>();
 
             imageFiles.AddRange(Directory.EnumerateFiles(path, "*.png", SearchOption.AllDirectories));
@@ -46,7 +46,6 @@ namespace spike_img_cmp
                     Console.WriteLine($"These appear the same:");
                     foreach (var file in kvp.Value)
                     {
-                        //Console.WriteLine($"- {file}");
                         Console.WriteLine($"- {file.Substring(path.Length)}");
                     }
                 }
